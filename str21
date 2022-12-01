@@ -1,0 +1,21 @@
+//преобразовать стркоу в нижний регистр
+#include "pt4.h"
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+char asciitolower(char in) {
+    if (in <= 'Z' && in >= 'A')
+        return in - ('Z' - 'z');
+    return in;
+}
+
+void Solve()
+{
+    Task("str21");
+    string s;
+    pt >> s;
+    transform(s.begin(), s.end(), s.begin(), asciitolower);
+    pt << s;
+}
