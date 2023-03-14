@@ -1,25 +1,24 @@
-Из заданной символьной строки выбрать те символы, которые встречаются в ней только один раз, в том порядке,
-в котором они встречаются в тексте. Знаки препинания не считать.
+Дана строка (S). Заменить заданный символ (L1) символом (L2).
 
 #include <windows.h>
 #pragma hdrstop
 #include "pt4.h"
+#include <string>
 using namespace std;
 
 void Solve()
 {
-    Task("str39");
-    string s,g;
-    int i,j,n;
-    pt >> s;
-    for(i=0;i<s.size();i++){
-        n=0;
-        if((s[i]>='а'&&s[i]<='я')||(s[i]>='А'&&s[i]<='Я')){
-             for(j=0;j<s.size();j++){
-                if (s[j]==s[i])n++;
-             }
-             if(n==1)g=g+s[i];
-        }
-    }
-    pt << g;
+	Task("str44");
+	string S;
+	string L1, L2;
+	char A, B;
+	pt >> S >> L1 >> L2;
+	A = L1[0];
+	B = L2[0];
+	for (int i = 0; i < S.length(); i++)
+	{
+		if (S[i] == A)
+			S[i] = B;
+	}
+	pt << S;
 }
