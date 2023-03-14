@@ -1,0 +1,25 @@
+Из заданной символьной строки выбрать те символы, которые встречаются в ней только один раз, в том порядке,
+в котором они встречаются в тексте. Знаки препинания не считать.
+
+#include <windows.h>
+#pragma hdrstop
+#include "pt4.h"
+using namespace std;
+
+void Solve()
+{
+    Task("str39");
+    string s,g;
+    int i,j,n;
+    pt >> s;
+    for(i=0;i<s.size();i++){
+        n=0;
+        if((s[i]>='а'&&s[i]<='я')||(s[i]>='А'&&s[i]<='Я')){
+             for(j=0;j<s.size();j++){
+                if (s[j]==s[i])n++;
+             }
+             if(n==1)g=g+s[i];
+        }
+    }
+    pt << g;
+}
